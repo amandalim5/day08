@@ -79,6 +79,11 @@ public class Game {
 
       if(command.equals("look")){
         System.out.printf("You are currently in %s\n>",standingHere);
+        String[] desc = rooma.get(standingHere).getDescription().split("<break>");
+        for(int i=0; i<desc.length; i++){
+          System.out.println(desc[i]);
+        }
+
       } else if(command.equals("exit")){
         System.out.println("Have a good day!");
         break;
@@ -89,6 +94,10 @@ public class Game {
         } else{
           System.out.println("You were in " + standingHere + " and now you are in " + newplace);
           standingHere = newplace;
+          String[] desc = rooma.get(standingHere).getDescription().split("<break>");
+          for(int i=0; i<desc.length; i++){
+            System.out.println(desc[i]);
+          }
         }
 
       }
